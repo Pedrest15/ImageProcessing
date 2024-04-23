@@ -23,3 +23,10 @@ The course had four assignments to develop throughout the semester:
 - 1: Superresolution and Enhancement
 - 2: Fourier Transform & Filtering in Frequency Domain
 - 3: Morphology + Color
+
+## Requirements:
+
+- `Python 3.x`
+- `numpy`
+- `imageio`
+- `matplotlib`
