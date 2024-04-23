@@ -1,4 +1,4 @@
-################ HEADER ############################################
+########################## HEADER ##################################
 # NAME: Pedro Lucas Castro de Andrade                              #
 # YEAR/SEMESTER: 2024/1                                            #
 # ASSIGNMENT 2 - Fourier Transform & Filtering in Frequency Domain #
@@ -6,7 +6,23 @@
 
 import numpy as np
 import imageio.v3 as imageio
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+def show_images(data, rows, columns, figsize=(10, 4)):
+    fig, axes = plt.subplots(figsize=figsize, nrows=rows, ncols=columns, dpi=150)
+
+    texts = {0:'Input Image',1:'Filter',
+            2:'Filtered Image',3:'Reference Image'}
+
+    for i in range(rows):
+      for j in range(columns):
+        ax = axes[i, j]
+        idx = i*columns+j
+        ax.imshow(data[idx], cmap="gray")
+        curr_label = f"{texts[idx]}"
+        ax.title.set_text(curr_label)
+        ax.axis('off')
+    plt.show()
 
 class Filter:
     def __init__(self,img):
@@ -129,7 +145,7 @@ class FreqDomain:
     @classmethod
     def normalize(cls,G):
         """
-            Normalize image value to [0,255] range
+            Normalize image values to [0,255] range
 
             Return:
             - normalized image
@@ -196,6 +212,5 @@ if __name__ == '__main__':
 
     print(root_mean_squared_error(G,H))
 
-
-
-
+    # compare images
+    show_images([I,filter._filtered_img,G,H],2,2)

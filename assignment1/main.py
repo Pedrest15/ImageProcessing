@@ -1,4 +1,4 @@
-################ HEADER ##########################
+################### HEADER #######################
 # NAME: Pedro Lucas Castro de Andrade            #
 # YEAR/SEMESTER: 2024/1                          #
 # ASSIGNMENT 1 - Superresolution and Enhancement #
@@ -6,7 +6,22 @@
 
 import numpy as np
 import imageio.v3 as imageio
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
+
+def show_images(data, rows, columns, figsize=(10, 4)):
+    fig, axes = plt.subplots(figsize=figsize, nrows=rows, ncols=columns, dpi=150)
+
+    texts = {0:'Superresolution Image',1:'Reference Image'}
+
+    for j in range(columns):
+        ax = axes[j]
+        idx = j
+        ax.imshow(data[idx], cmap="gray")
+        curr_label = texts[idx]
+        ax.set_title(curr_label)
+        ax.axis('off')
+    
+    plt.show()
 
 def histogram(img:np.array,num_levels:int) -> np.array:
     """
@@ -177,3 +192,8 @@ if __name__ == '__main__':
     super_h = superresolution(low_img[0],low_img[1],low_img[2],low_img[3])
 
     print(f"{root_mean_squared_error(high_img,super_h):.4f}")
+
+    # compare images
+    show_images([super_h,high_img],1,2)
+
+    
