@@ -12,16 +12,17 @@ c) Filter index i ∈ M = {0, 1, 2, 3, 4}. </br>
 d) Filter Parameters respective to each index;
 
 ## Use the filters below:
-a) index i = 0 - Ideal Low-pass - with radius r.
-b) index i = 1 - Ideal High-pass - with radius r.
-c) index i = 2 - Ideal Band-stop - with radius r0 and r1.
-d) index i = 3 - Laplacian High-pass.
-e) index i = 4 - Gaussian Low-pass - with σ1 and σ2;
-3. Process the input images:
-a) Generate the Fourier Spectrum ( F ( I ) ) for the input image I.
-b) Filter F ( I ) multiplying it by the input filter Mi
-c) Generate the filtered image G back in the space domain.
-d) Compare the output image ( G ) with the reference image ( H ).
+a) index i = 0 - Ideal Low-pass - with radius r. </br>
+b) index i = 1 - Ideal High-pass - with radius r. </br>
+c) index i = 2 - Ideal Band-stop - with radius r0 and r1. </br>
+d) index i = 3 - Laplacian High-pass. </br>
+e) index i = 4 - Gaussian Low-pass - with σ1 and σ2; </br>
+
+##Process the input images:
+a) Generate the Fourier Spectrum ( F ( I ) ) for the input image I. </br>
+b) Filter F ( I ) multiplying it by the input filter Mi. </br>
+c) Generate the filtered image G back in the space domain. </br>
+d) Compare the output image ( G ) with the reference image ( H ). </br>
 
 ## Comparing against reference
 
