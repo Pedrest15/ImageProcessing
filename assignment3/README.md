@@ -19,7 +19,7 @@ c) Adaptive Limiarization (Otsu). </br>
 a) Convert the input image in Grayscale. </br>
 b) Apply Adaptive Limiarization (Otsu) to binarize the image. </br>
 c) Create the binary mask by applying the sequence of Erosions and Dilations. </br>
-d) Create the heatmap using the given implementation. </br>
+d) Create the heatmap. </br>
 e) Create the colored mask as a combination of the heatmap and the binary mask. </br>
 f) Create the image ( G ) combining the image ( I ) with the colored mask. </br>
 g) Compare the created image ( G ) with the reference image ( H ). </br>
