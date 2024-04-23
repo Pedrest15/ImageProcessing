@@ -1,5 +1,7 @@
 # Superresolution and Enhancement
 
+<div align="justify" >
+
 In this assignment it was implemented 3 distinct image enhancement techniques, as
 well as a superresolution method based on multiple views of the same image.
 
@@ -49,7 +51,7 @@ where $`N × N`$ is the resolution of images H and super_H .
 In folder `images` there are _.png_ files to test. In the end of execution, it is
 show the superH and H images, so it is possible to compare visually.
 
-![Execution Example](assignment1/Exmple.png)
+![Execution Example](Example.png)
 
 In folder `test_cases_in_out` there are files `caseXX.in` and `casesXX.out` where 
 _.in_ has inputs examples and _.out_ the respective output. Note that, when runned
