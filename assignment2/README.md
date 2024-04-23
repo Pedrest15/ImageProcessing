@@ -18,7 +18,7 @@ c) index i = 2 - Ideal Band-stop - with radius r0 and r1. </br>
 d) index i = 3 - Laplacian High-pass. </br>
 e) index i = 4 - Gaussian Low-pass - with σ1 and σ2; </br>
 
-##Process the input images:
+## Process the input images:
 a) Generate the Fourier Spectrum ( F ( I ) ) for the input image I. </br>
 b) Filter F ( I ) multiplying it by the input filter Mi. </br>
 c) Generate the filtered image G back in the space domain. </br>
