@@ -118,7 +118,6 @@ def erosion(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
         Returns:
         - Eroded image.
     """
-
     # initialize an array for the eroded image
     eroded_image = np.zeros_like(I,dtype=np.float64)
 
@@ -130,7 +129,7 @@ def erosion(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
                 eroded_image[i, j] = I[i,j]
             else:
                 # perform erosion by taking the minimum value in the region
-                eroded_image[i, j] = np.min(I[i-1:i+2, j-1:j+2] * kernel)
+                eroded_image[i, j] = np.min(padded_image[i-1:i+2, j-1:j+2] * kernel)
 
     return eroded_image
 
@@ -148,7 +147,6 @@ def dilation(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
         Returns:
         Dilated image.
     """
-
     # initialize an array for the dilated image
     dilated_image = np.zeros_like(I,dtype=np.float64)
 
