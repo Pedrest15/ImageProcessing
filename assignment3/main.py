@@ -118,8 +118,6 @@ def erosion(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
         Returns:
         - Eroded image.
     """
-    # pad the input image to handle boundary pixels
-    padded_image = np.pad(I, ((1, 1), (1, 1)), mode='constant')
 
     # initialize an array for the eroded image
     eroded_image = np.zeros_like(I,dtype=np.float64)
@@ -132,7 +130,7 @@ def erosion(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
                 eroded_image[i, j] = I[i,j]
             else:
                 # perform erosion by taking the minimum value in the region
-                eroded_image[i, j] = np.min(padded_image[i:i+3, j:j+3] * kernel)
+                eroded_image[i, j] = np.min(I[i-1:i+2, j-1:j+2] * kernel)
 
     return eroded_image
 
@@ -150,8 +148,6 @@ def dilation(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
         Returns:
         Dilated image.
     """
-    # pad the input image to handle boundary pixels
-    padded_image = np.pad(I, ((1, 1), (1, 1)), mode='constant')
 
     # initialize an array for the dilated image
     dilated_image = np.zeros_like(I,dtype=np.float64)
@@ -164,7 +160,7 @@ def dilation(I:np.array,m:int,n:int,kernel:np.array) -> np.array:
                 dilated_image[i, j] = I[i,j]
             else:
                 # perform dilation by taking the maximum value in the region
-                dilated_image[i, j] = np.max(padded_image[i:i+3, j:j+3] * kernel)
+                dilated_image[i, j] = np.max(I[i-1:i+2, j-1:j+2] * kernel)
 
     return dilated_image
 
